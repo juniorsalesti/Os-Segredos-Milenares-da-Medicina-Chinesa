@@ -1,0 +1,6 @@
+{
+  "name": "Os Segredos Milenares da Medicina Chinesa",
+  "description": "Livro digital e leitor interativo com 100 receitas tradicionais e ensinamentos da Mestra Lin para o bem-estar do dia a dia.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
