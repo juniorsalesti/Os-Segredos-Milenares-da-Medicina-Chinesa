@@ -1,8 +1,7 @@
 import React from 'react';
 import { BOOK_METADATA, PAGE_CONTENTS } from '../data/bookContent';
 import { ALL_RECIPES } from '../data/recipesData';
-
-const COVER_IMAGE_PATH = '/src/assets/images/mestra_lin_cover_1785961502884.jpg';
+import { OptimizedBookCover } from './OptimizedBookCover';
 
 export const PrintBook: React.FC = () => {
   return (
@@ -13,11 +12,10 @@ export const PrintBook: React.FC = () => {
         <h1 className="text-4xl font-bold tracking-tight text-amber-900">{BOOK_METADATA.title}</h1>
         <p className="text-lg italic text-gray-700 max-w-xl mx-auto">{BOOK_METADATA.subtitle}</p>
         <div className="my-8">
-          <img
-            src={COVER_IMAGE_PATH}
+          <OptimizedBookCover
             alt="Mestra Lin Cover"
+            size="print"
             className="w-64 mx-auto rounded-lg shadow-md border"
-            referrerPolicy="no-referrer"
           />
         </div>
         <p className="text-xl font-bold">Autor: {BOOK_METADATA.author}</p>

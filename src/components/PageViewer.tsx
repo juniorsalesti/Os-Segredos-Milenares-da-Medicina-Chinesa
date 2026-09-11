@@ -23,9 +23,7 @@ import { PAGE_CONTENTS, CHAPTER_INTROS } from '../data/bookContent';
 import { ALL_RECIPES } from '../data/recipesData';
 import { ALL_BOOK_PAGES } from '../data/pageNavigation';
 import { playChimeSound } from '../utils/audioSynth';
-
-// Product cover artwork URL
-const COVER_IMAGE_PATH = 'https://i.ibb.co/XfDd84Sh/Chat-GPT-Image-5-de-ago-de-2026-18-11-59.png';
+import { OptimizedBookCover } from './OptimizedBookCover';
 
 interface PageViewerProps {
   pageNav: BookPageNavigation;
@@ -154,14 +152,14 @@ export const PageViewer: React.FC<PageViewerProps> = ({
             </div>
 
             <div className="relative mx-auto max-w-sm rounded-2xl overflow-hidden border-4 border-[#D8C7B5] shadow-2xl group">
-              <img
-                src={COVER_IMAGE_PATH}
+              <OptimizedBookCover
                 alt="Mestra Lin - Os Segredos Milenares da Medicina Chinesa"
-                className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700"
-                referrerPolicy="no-referrer"
+                priority={true}
+                size="full"
+                className="transform group-hover:scale-105 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80" />
-              <div className="absolute bottom-4 left-0 right-0 text-white p-4 text-center">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80 pointer-events-none" />
+              <div className="absolute bottom-4 left-0 right-0 text-white p-4 text-center pointer-events-none">
                 <p className="font-serif italic text-xs text-amber-200">Apresentado por</p>
                 <p className="font-serif font-bold text-lg text-amber-100">{PAGE_CONTENTS.page1_cover.author}</p>
               </div>
@@ -225,11 +223,10 @@ export const PageViewer: React.FC<PageViewerProps> = ({
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 my-6 items-center">
               <div className="md:col-span-1">
-                <img
-                  src={COVER_IMAGE_PATH}
+                <OptimizedBookCover
                   alt="Mestra Lin"
-                  className="rounded-2xl border-2 border-[#D8C7B5] shadow-lg w-full h-auto object-cover"
-                  referrerPolicy="no-referrer"
+                  size="thumb"
+                  className="rounded-2xl border-2 border-[#D8C7B5] shadow-lg"
                 />
               </div>
               <div className="md:col-span-2 space-y-4">
